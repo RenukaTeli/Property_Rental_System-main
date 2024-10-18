@@ -1,0 +1,161 @@
+@charset "UTF-8";
+
+body, ul, li, a {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	line-height: 1.6;
+	font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+	background-color: #ffffff;
+	color: #333;
+	padding-top: 80px;
+	scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Header */
+header {
+	background-color: purple;
+	color: #fff;
+	padding: 15px 0;
+	border-radius: 15px 15px 0 0;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+header .container2 {
+	width: 90%;
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/* Logo Styling */
+header .logo {
+	font-size: 2em;
+	font-weight: bold;
+	color : white;
+	text-decoration: underline;
+	transition: color 0.3s ease-in-out;
+}
+
+header .logo:hover {
+	color: rgb(255, 255, 128); /* Subtle hover effect for logo */
+}
+
+/* Menu Styling */
+header nav {
+	display: flex;
+	align-items: center;
+}
+
+header .menu {
+	list-style: none;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	transition: transform 0.3s ease-in-out;
+}
+
+header .menu li {
+	margin-left: 20px;
+}
+
+header .menu a {
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+	font-size: 1.2em;
+	font-weight: bold;
+	transition: color 0.3s ease-in-out;
+}
+
+header .menu a:hover {
+	color: #ffffff; /* Smooth hover transition */
+}
+
+/* Toggle Button for Mobile */
+header .toggle-menu {
+	display: none;
+	cursor: pointer;
+	font-size: 2em;
+	color: #ffcc29;
+	transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+header .toggle-menu:hover {
+	color: #ffffff;
+	transform: rotate(90deg); /* Add subtle rotation on hover */
+}
+
+/* Responsive Design for Mobile Navigation */
+@media (max-width: 768px) {
+	header .menu {
+		display: none; /* Hide the menu by default */
+		flex-direction: column;
+		width: 100%;
+		position: absolute;
+		top: 60px;
+		left: 0;
+		background: linear-gradient(90deg, #0f4c75, #3282b8);
+		box-shadow: 0 8px 12px rgb(255, 255, 255);
+		opacity: 0; /* Start hidden */
+		visibility: hidden;
+		transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+	}
+	header .menu.active {
+		display: flex;
+		opacity: 1; /* Fade in effect */
+		visibility: visible;
+	}
+	header .menu li {
+		margin: 10px 0;
+		text-align: center;
+	}
+	header .toggle-menu {
+		display: block;
+	}
+}
+
+/* Responsive Design: Fine-tune for smaller screens */
+@media (max-width: 480px) {
+	header .logo {
+		font-size: 1.5em;
+	}
+	header .menu a {
+		font-size: 1em;
+	}
+}
+
+/* Content Styling */
+.content {
+	margin-top: 20px;
+	padding: 20px;
+	max-width: 1200px;
+	margin: 80px auto; /* Adjust margin for header space */
+	color: rgb(0, 0, 0);
+	line-height: 1.8;
+}
+
+.content h1, .content p {
+	margin-bottom: 20px;
+}
+
+/* Enhancing accessibility */
+a:focus {
+	outline: 2px solid #ffcc29; /* Accessibility improvement for keyboard users */
+	outline-offset: 4px;
+}
+
+button:focus, input:focus {
+	outline: none;
+	box-shadow: 0 0 5px rgba(255, 204, 41, 0.75); /* Button focus for accessibility */
+}
